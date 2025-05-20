@@ -11,6 +11,15 @@ class ACTIONCOMBAT_API AEnemyProjectile : public AActor
 {
 	GENERATED_BODY()
 	
+	//store template for hit
+	UPROPERTY(EditAnywhere)
+	UParticleSystem* HitTemplate;
+
+	float DeathTimer{ 2.0f };
+
+	UPROPERTY(EditAnywhere)
+	float Damage{ 10.0f };
+
 public:	
 	// Sets default values for this actor's properties
 	AEnemyProjectile();
@@ -25,4 +34,8 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void HandleBeginOverlap(AActor* OtherActor);
+
+	//timers dont work without ufunction
+	UFUNCTION()
+	void DestroyProjectile();
 };
