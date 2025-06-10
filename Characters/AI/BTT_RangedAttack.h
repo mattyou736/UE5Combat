@@ -17,6 +17,8 @@ class ACTIONCOMBAT_API UBTT_RangedAttack : public UBTTaskNode
 	UPROPERTY(EditAnywhere)
 	UAnimMontage* AnimMontage;
 
+	double Threshold{ 0.9 };
+
 public:
 
 
