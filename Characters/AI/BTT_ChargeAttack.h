@@ -26,6 +26,13 @@ class ACTIONCOMBAT_API UBTT_ChargeAttack : public UBTTaskNode
 	//special type for storing function in variable
 	FScriptDelegate MoveCompletedDelegate;
 
+	float OriginalWalkSpeed;
+
+	UPROPERTY(EditAnywhere)
+	float ChargeWalkSpeed{ 2000.0f };
+
+	bool bIsfinished{ false };
+
 protected:
 	virtual void TickTask
 		(
